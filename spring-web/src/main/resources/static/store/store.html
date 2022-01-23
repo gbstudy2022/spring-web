@@ -21,6 +21,11 @@
                     <label for="filterMaxPrice">Макс. цена</label>
                 </div>
                 <p></p>
+                <div class="form-floating input-group-sm">
+                    <input type="text" class="form-control" id="filterCategory" placeholder="" ng-model="filter.category">
+                    <label for="filterCategory">Категория</label>
+                </div>
+                <p></p>
                 <button class="btn btn-outline-warning btn-sm" style="width: 100%;" type="submit">Применить</button>
             </form>
         </div>
@@ -28,6 +33,7 @@
             <table class="table table-hover">
                 <tr>
                     <td>ID</td>
+                    <td>Категория</td>
                     <td>Название</td>
                     <td>Цена</td>
                     <td></td>
@@ -35,6 +41,7 @@
                 <tbody>
                 <tr ng-repeat="p in ProductsPage.content">
                     <td>{{p.id}}</td>
+                    <td>{{p.category}}</td>
                     <td>{{p.title}}</td>
                     <td>{{p.price}}</td>
                     <td>
