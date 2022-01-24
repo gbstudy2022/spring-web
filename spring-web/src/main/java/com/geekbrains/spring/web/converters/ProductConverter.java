@@ -13,4 +13,13 @@ public class ProductConverter {
     public ProductDto entityToDto(Product product) {
         return new ProductDto(product.getId(), product.getTitle(), product.getPrice(), product.getCategory().getTitle());
     }
+
+    public com.geekbrains.spring.web.soap.Product entityToXmlType(Product entity) {
+        com.geekbrains.spring.web.soap.Product product = new com.geekbrains.spring.web.soap.Product();
+        product.setId(entity.getId());
+        product.setTitle(entity.getTitle());
+        product.setPrice(entity.getPrice());
+        product.setCategory(entity.getCategory().getTitle());
+        return product;
+    }
 }

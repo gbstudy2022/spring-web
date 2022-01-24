@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -55,5 +56,9 @@ public class ProductsService {
         product.setPrice(productDto.getPrice());
         product.setTitle(productDto.getTitle());
         return product;
+    }
+
+    public List<Product> findAll() {
+        return productsRepository.findAll();
     }
 }
